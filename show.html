@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>展示页</title> 
+<script language="JavaScript" src="av-min.js"></script>
+<script language="javascript" type="text/javascript"> 
+var APP_ID = 'AqyGfLHcLI1SAaAPgB5Ns42K-gzGzoHsz';
+var APP_KEY = 'cPy5KeNVXMzwvxsUCQH9MP9e';
+
+AV.init({
+  appId: APP_ID,
+  appKey: APP_KEY
+});
+
+
+  var query = new AV.Query('user');
+
+  var cql = "select * from user where name = 'chy'";
+  AV.Query.doCloudQuery(cql).then(function (data) {
+      // results 即为查询结果，它是一个 AV.Object 数组
+      var results = data.results;
+      var name = results[0].get('name');
+      var passworld = results[0].get('passworld');
+      alert(name + " " + passworld);
+  }, function (error) {
+  });
+  cql = "select count(*) from user where name = 'chy'";
+  AV.Query.doCloudQuery(cql).then(function (data) {
+      // 获取符合查询的数量
+      var count = data.count;
+      alert(count);
+  }, function (error) {
+  });
+    alert('asdsads');
+</script> 
+</head> 
+
+<body> 
+<a href="test.html">主页</a>
+</body> 
+</html>

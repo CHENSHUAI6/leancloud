@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>写入</title> 
+<script language="JavaScript" src="av-min.js"></script>
+<script language="javascript" type="text/javascript"> 
+var APP_ID = 'AqyGfLHcLI1SAaAPgB5Ns42K-gzGzoHsz';
+var APP_KEY = 'cPy5KeNVXMzwvxsUCQH9MP9e';
+
+AV.init({
+  appId: APP_ID,
+  appKey: APP_KEY
+});
+ 
+
+var TestObject = AV.Object.extend('user');
+var testObject = new TestObject();
+testObject.save({
+  name: 'chy',
+  passworld: 'asd'
+}).then(function(object) {
+  alert('LeanCloud Rocks!');
+})
+</script> 
+</head> 
+
+<body> 
+<a href="test.html">主页</a>
+</body> 
+</html>
