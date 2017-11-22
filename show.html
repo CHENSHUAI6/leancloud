@@ -23,7 +23,8 @@ AV.init({
       var results = data.results;
       var name = results[0].get('name');
       var passworld = results[0].get('passworld');
-      alert(name + " " + passworld);
+      var id = results[0].id;
+      alert(id);
   }, function (error) {
   });
   cql = "select count(*) from user where name = 'chy'";
@@ -33,7 +34,6 @@ AV.init({
       alert(count);
   }, function (error) {
   });
-    alert('asdsads');
 </script> 
 </head> 
 
